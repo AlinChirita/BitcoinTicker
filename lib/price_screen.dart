@@ -10,13 +10,15 @@ class PriceScreen extends StatefulWidget {
 
 class _PriceScreenState extends State<PriceScreen> {
   DropdownButton<String> getAndroidDropdown() {
-    List<DropdownMenuItem<String>> dropDownItems = [];
+    List<DropdownMenuItem<String>> dropDownItems = [
+      new DropdownMenuItem(child: Text('AUD'))
+    ];
 
-    for (String currency in currenciesList) {
-      var newItem = DropdownMenuItem(child: Text(currency), value: currency);
-
-      dropDownItems.add(newItem);
-    }
+    // for (String currency in currenciesList) {
+    //   var newItem = DropdownMenuItem(child: Text(currency), value: currency);
+    //
+    //   dropDownItems.add(newItem);
+    // }
     return DropdownButton<String>(
       value: selectedCurrency,
       items: dropDownItems,
@@ -29,11 +31,11 @@ class _PriceScreenState extends State<PriceScreen> {
   }
 
   CupertinoPicker iOSPicker() {
-    List<Text> pickerItems = [];
+    List<Text> pickerItems = [new Text('AUD')];
 
-    for (String currency in currenciesList) {
-      pickerItems.add(Text(currency));
-    }
+    // for (String currency in currenciesList) {
+    //   pickerItems.add(Text(currency));
+    // }
 
     return CupertinoPicker(
       backgroundColor: Colors.lightBlue,
